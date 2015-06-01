@@ -1,0 +1,10 @@
+{
+	"toilet":"30",
+	"dishwasher":"40",
+	"clotheswasher":"30",
+	"faucet":"20",
+	"shower":"30",
+	"bath":"60",
+	"leaks":"2",
+	"others":"3"
+}

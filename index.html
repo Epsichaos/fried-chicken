@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+    <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+    <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+    <html class="no-js lt-ie9"> <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <html> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>WebApp</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Google font -->
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'> 
+        <!-- footer style -->
+        <link rel="stylesheet" href="css/sticky-footer.css">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+        <!--<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> -->
+        
+        <!-- Connexion issues
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular-route.min.js"></script>
+        -->
+        <link rel="icon" type="image/png" href="img/favicon.png">
+    </head>
+    <body ng-app="WebApp">
+    
+		<div ng-view></div>   
+
+        <!-- Spaces for footer -->
+        <br>
+        <br>
+        <br>
+        <!-- FOOTER -->
+        <footer class="footer">
+        <div class="container">
+            <br>
+            <p id="footer">Water monitoring system — </p>
+        </div>
+        </footer>
+
+        <script src="js/jquery-1.11.3.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/angular.js"></script>
+        <script src="js/angular-route.js"></script>
+        <script src="js/Chart.js"></script>
+   		<script src="js/webapp.js"></script>
+        <script src="js/controllers/home.js"></script>
+        <script src="js/controllers/historic.js"></script>
+        <script src="js/controllers/contact.js"></script>
+        <script src="js/controllers/comparison.js"></script>
+        <script src="js/controllers/social.js"></script>
+        <script src="js/controllers/tips.js"></script>
+    </body>
+</html>
