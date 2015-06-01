@@ -1,0 +1,64 @@
+<div appmenu></div> 
+<br>
+<br>
+<br>
+<div class="container">
+<div class="row">
+		<div class="jumbotron">
+		<h1 class="text-center"><i class="fa fa-area-chart"></i> Comparisons</h1>
+	</div>
+</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="jumbotron">
+				<h2 class="text-center">Social Ranking</h2>
+				<hr>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat.</p>
+				<h2 class="text-center">Social networks</h2>
+				<hr>
+				<div class="row">
+					<div class="col-md-4"><p class="text-center"><i class="fa fa-facebook-square fa-5x"></i></p></div>
+					<div class="col-md-4"><p class="text-center"><i class="fa fa-twitter fa-5x"></i></p></div>
+					<div class="col-md-4"><p class="text-center"><i class="fa fa-google-plus fa-5x"></i></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-10 col-md-offset-1">
+			<h2 class="text-center">Water usage comparison</h2>
+			<hr>
+						<p class="text-center">
+						<!--
+			<span id="dailyButton"><button class="btn btn-warning" onclick="compareAll(0,1);">Daily</button></span>
+			<span id="weeklyButton"><button class="btn btn-warning" onclick="compareAll(0,2);">Weekly</button></span>
+			<span id="monthlyButton"><button class="btn btn-warning" onclick="compareAll(0,3);">Monthly</button></span>
+			<span id="yearlyButton"><button class="btn btn-warning" onclick="compareAll(0,4);">Yearly</button></span>
+			-->
+			<span id="dailyButton"></span>
+			<span id="weeklyButton"></span>
+			<span id="monthlyButton"></span>
+			<span id="yearlyButton"></span>
+			<p>
+			<div id="DivComparisonBarContainer"><canvas id="barChart" width="600" height="300"></canvas></div>
+			<br>
+			<div class="row">
+				<p id="bar_legend_comp"></p>
+			</div>
+			<br>
+			<p class="text-center">
+			<!--
+			<button class="btn btn-success" id="day" onclick="compareAll(1,0);">Comparison with before</button>
+			<button class="btn btn-success" id="day" onclick="compareAll(2,0);">Comparison with others</button>
+			-->
+			<span id="pastButton"></span>
+			<span id="othersButton"></span>
+			</p>
+		</div>
+	</div>
+</div>
+
+<div ng-controller="comparisonCtrl"></div>
