@@ -10,4 +10,11 @@ function messageCompanyDisplay() {
 		$('#messageFromCompany').empty();
 		$('#messageFromCompany').append(data_json.message)
 	})
+
+/*
+	$.getJSON("http://131.251.176.109:8080/consumer/report?type=contact", function(data) {
+		$('#messageFromCompany').empty();
+		$('#messageFromCompany').append(data.message);
+	})
+*/
 }
