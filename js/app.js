@@ -21,7 +21,8 @@ angular.module('WebApp', [
         })
 
         .when('/', {
-            templateUrl: 'partials/home.html'
+            templateUrl: 'partials/home.html',
+            controller: 'homeController'
         })
 
         .when('/historic', {
