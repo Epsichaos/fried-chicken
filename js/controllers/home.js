@@ -28,6 +28,7 @@ function homeController($http) {
 		});
 	*/
 	$(document).ready(function() {
+
 		$.getJSON("json/home/WaterStatus.json", function(data) {
 		 	$('#SpanStatus').remove();
 	        $('#WaterStatus').append('<span id=\"SpanStatus\" class=\"label label-'+data.status+'\">'+data.status+'</span>');
@@ -35,6 +36,29 @@ function homeController($http) {
 	    	.fail( function() {
 	        console.error("getJSON failed");
 	    });
+
+	    // JSONP : get json from a different server require some specific syntax on JSON
+	    /*
+		$http.jsonp('http://131.251.176.109:8080/consumer')
+			.success(function(data) {
+				console.log(data);
+			});
+	
+		*/
+		/*
+		$.ajax({
+	        url: 'http://131.251.176.109:8080/consumer',
+	        dataType: 'jsonp',
+	        jsonp: 'callback',
+	        timeout: 50000,
+	        success: function(data, status){
+	            alert('lol');
+	        },
+	        error: function(){
+	        	alert('error');
+	        }
+    	});
+		*/
 	});
 
 	// Part not useless if we want to code a reset button
@@ -46,5 +70,5 @@ function homeController($http) {
     	.fail( function() {
         console.error("getJSON failed");
     });
-*/
+	*/
 }

@@ -28,14 +28,13 @@ angular.module('Authentication')
             //    });
 
         // call the API for authentification
-        
+        /*
         $http.post('/administration/authenticate', { username: username, password: password })
             .success(function (response) {
                 callback(response);
             });
-        
+        */
         };
-
         service.SetCredentials = function (username, password) {
             var authdata = Base64.encode(username + ':' + password);
 
