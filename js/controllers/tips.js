@@ -51,7 +51,6 @@ function chartTips(name) {
         });
     })
 */
-
      // AJAX JSONP REQUEST
     var time;
     var label_graph = name + ' consumption';

@@ -1,5 +1,5 @@
 // New Controller for homepage
-function homeCtrl($http) {
+function homeCtrl() {
 	$.ajaxSetup({ cache: false });
 	$(document).ready(function() {
 /*
