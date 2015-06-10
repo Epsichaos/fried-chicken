@@ -4,12 +4,12 @@ fried-chicken
 Summary
 -------
 
-	*Fried-chicken* is a Web Application developped to monitor water networks and water end use in a residential scale. People should be able to look after their actual consumption and to use several filters to change the time length of the water consumption review. This application will also be able to help the consumers to interact with their Water Company and to report issues over the Water network.
+*Fried-chicken* is a Web Application developped to monitor water networks and water end use in a residential scale. People should be able to look after their actual consumption and to use several filters to change the time length of the water consumption review. This application will also be able to help the consumers to interact with their Water Company and to report issues over the Water network.
 
 Libraries
 ---------
 
-	*Fried-chicken* is implemented with the help of the following librairies:
+*Fried-chicken* is implemented with the help of the following librairies:
 
 - AngularJS: AngularJS is a powerful Javascript framework developped by Google (under the MIT license) which allows a nice code structure in single page web applications. 
 - Bootstrap: A CSS Framework developped by Twitter (under the MIT license), which provide a really powerful responsive grid system, available  on almost every kind of devices and browsers, such as mobiles devices (Android, iOs, ...).
@@ -20,12 +20,12 @@ Libraries
 Implementation
 --------------
 
-	The application should be implemented using PhP script to interact with a RESTful API, used to generate the json.
+The application should be implemented using PhP script to interact with a RESTful API, used to generate the json.
 
 Acknowledgements
 ----------------
 
-	Many thanks to Jason Watmore, whom tutorial helped me a lot with the login page and the authentification with AngularJS. Visit him at [Jason Watmore's blog](http://www.jasonwatmore.com/)
+Many thanks to Jason Watmore, whom tutorial helped me a lot with the login page and the authentification with AngularJS. Visit him at [Jason Watmore's blog](http://www.jasonwatmore.com/)
 
 License
 -------
