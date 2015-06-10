@@ -1,4 +1,4 @@
-fried-chicken
+Fried-chicken
 =============
 
 Summary
