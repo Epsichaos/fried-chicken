@@ -22,7 +22,16 @@
 <body ng-app="WebApp">
 
     <!-- NG VIEW -->
-    <div ng-view></div>
+        <!--<div ng-view></div>-->
+        <!-- for ui-router -->
+        <div ui-view></div>
+
+                    <!-- LOGOUT TEST PUTAIN -->
+                    <!--
+            <div ng-controller="LogoutCtrl">
+                <p class="text-center"><button class="btn btn-danger btn-lg" ng-click="logout()"> LOGOUT </button></p>
+            </div>
+            -->
         
     <!-- Spaces for footer -->
     <br>
@@ -45,6 +54,7 @@
         <script src="lib/js/angular.js"></script>
         <script src="lib/js/angular-route.js"></script>
         <script src="//code.angularjs.org/1.2.13/angular-cookies.js"></script>
+        <script src="lib/js/angular-ui-router.js"></script>
 
         <!-- BOOTSTRAP -->
         <script src="lib/js/bootstrap.js"></script>
@@ -54,9 +64,13 @@
 
     <!-- SCRIPTS -->
     <!-- WEBAPP-->
+        <!-- TEST UI -->
+        <script src="js/routingConfig.js"></script>
+
     <script src="js/app.js"></script>
         
     <script src="js/services/serviceAuth.js"></script>
+    <!--<script src="js/controllers/authCtrl.js"></script> -->
 
     <!-- CONTROLLERS -->
     <script src="js/controllers/home.js"></script>
@@ -65,7 +79,8 @@
     <script src="js/controllers/comparison.js"></script>
     <script src="js/controllers/social.js"></script>
     <script src="js/controllers/tips.js"></script>
-    <script src="js/controllers/authCtrl.js"></script>
-
+    <script src="js/controllers/login.js"></script>
+    <script src="js/controllers/logout.js"></script>
+   
 </body>
 </html>

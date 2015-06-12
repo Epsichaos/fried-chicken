@@ -9,3 +9,30 @@ app.controller('formController', function($scope) {
 	scope.reset();
 });
 */
+'use strict';
+
+var app = angular.module('WebApp');
+
+app.controller('LoginCtrl', 
+	['$rootScope', '$scope', '$location', '$window', 'Auth', function($rootScope, $scope, $location, $window, Auth){
+		$scope.rememberme = true;
+		$scope.login=function() {
+			// test
+			/*
+			console.log('Username:' + $scope.username);
+			console.log('Password:' + $scope.password);
+			console.log('Remember:' + $scope.rememberme);
+			*/
+			Auth.login({
+				username: $scope.username,
+				password: $scope.password,
+				rememberme: $scope.rememberme
+			},
+			function(res){
+				$location.path('/');
+			},
+			function(err){
+				$rootScope.error = 'Failed to login';
+			});
+		};
+	}]);

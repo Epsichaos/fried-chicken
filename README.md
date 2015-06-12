@@ -25,12 +25,12 @@ The application should be implemented using PhP script to interact with a RESTfu
 Acknowledgements
 ----------------
 
-Many thanks to Jason Watmore, whom tutorial helped me a lot with the login page and the authentification with AngularJS. Visit him at [Jason Watmore's blog](http://www.jasonwatmore.com/)
+Many thanks to [Frederik Nakstad](https://github.com/fnakstad) and the help he provided with his [tutorial of authentification with AngularJS](https://github.com/fnakstad/angular-client-side-auth).
 
 Warnings
 --------
 
-There is at the moment some security issues with the login page. They will be fixed in a near future.
+The login authentication is not working really well at the moment. It seems to be secure and working, but the implementation has not been achieved yet.
 
 License
 -------

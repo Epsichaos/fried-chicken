@@ -3,71 +3,112 @@
 //ajax cache
 $.ajaxSetup({ cache: false });
 
-// declare modules
-angular.module('Authentication', []);
+// TEST WITH UI ROUTER
 
+// loading of modules
 angular.module('WebApp', [
-    'Authentication',
-    'ngRoute',
+    'ui.router',
     'ngCookies'
 ])
+// menu directive
+.directive('appmenu', function(){
+    return {
+        templateUrl: 'layout/menu.html'
+    };
+})
 
-.config(['$routeProvider', function ($routeProvider) {
+// route config
+.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpProvider', function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
+    var access = routingConfig.accessLevels;
 
-    $routeProvider
-        .when('/login', {
-            controller: 'LoginController',
-            templateUrl: 'partials/login.html'
+    // Public routes
+    $stateProvider
+        .state('public', {
+            abstract: true,
+            template: '<ui-view/>',
+            data: {
+                access: access.public
+            }
         })
-
-        .when('/', {
-            templateUrl: 'partials/home.html',
-            controller: 'homeCtrl'
+        .state('public.404', {
+            url: '/404',
+            templateUrl: 'partials/404.html'
         })
-
-        .when('/historic', {
+        .state('public.login', {
+            url: '/login',
+            templateUrl: 'partials/login.html',
+            controller: 'LoginCtrl'
+        });
+    // User routes
+    $stateProvider
+        .state('user', {
+            abstract: true,
+            template: '<ui-view/>',
+            data: {
+                access: access.user
+            }
+        })
+        .state('user.home', {
+            url: '/',
+            templateUrl: 'partials/home.html'
+        })
+        .state('user.historic', {
+            url: '/historic',
             templateUrl: 'partials/historic.html'
         })
-
-        .when('/comparisons', {
-            templateUrl: 'partials/comparisons.html'  
+        .state('user.comparisons', {
+            url: '/comparisons',
+            templateUrl: 'partials/comparisons.html'
         })
-
-        .when('/tips', {
+        .state('user.tips', {
+            url: '/tips',
             templateUrl: 'partials/tips.html'
         })
-
-        .when('/social', {
+        .state('user.social', {
+            url: '/social',
             templateUrl: 'partials/social.html'
         })
-
-        .when('/contact', {
+        .state('user.contact', {
+            url: '/contact',
             templateUrl: 'partials/contact.html'
-        })
-
-        .otherwise({ redirectTo: '/login' });
-}])
-
-.run(['$rootScope', '$location', '$cookieStore', '$http',
-    function ($rootScope, $location, $cookieStore, $http) {
-        // keep user logged in after page refresh
-        $rootScope.globals = $cookieStore.get('globals') || {};
-        if ($rootScope.globals.currentUser) {
-            $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata; // jshint ignore:line
-        }
-
-        $rootScope.$on('$locationChangeStart', function (event, next, current) {
-            // redirect to login page if not logged in
-            if ($location.path() !== '/login' && !$rootScope.globals.currentUser) {
-                console.log('No credentials');
-                $location.path('/login');
-            }
         });
-    }]);
 
-angular.module('WebApp')
-    .directive('appmenu', function(){
+    $urlRouterProvider.otherwise('/404');
+
+    // just a test, I think it can be commented or remove
+    $httpProvider.interceptors.push(function($q, $location) {
         return {
-            templateUrl: 'layout/menu.html'
+            'responseError': function(response) {
+                if(response.status === 401 || response.status === 403) {
+                    $location.path('/login');
+                }
+                return $q.reject(response);
+            }
         };
     });
+}])
+
+.run(['$rootScope', '$state', 'Auth', function ($rootScope, $state, Auth) {
+
+    $rootScope.$on("$stateChangeStart", function (event, toState, toParams, fromState, fromParams) {
+        
+        if(!('data' in toState) || !('access' in toState.data)){
+            $rootScope.error = "Access undefined for this state";
+            event.preventDefault();
+        }
+        else if (!Auth.authorize(toState.data.access)) {
+            $rootScope.error = "Seems like you tried accessing a route you don't have access to...";
+            event.preventDefault();
+
+            if(fromState.url === '^') {
+                if(Auth.isLoggedIn()) {
+                    $state.go('user.home');
+                } else {
+                    $rootScope.error = null;
+                    $state.go('public.login');
+                }
+            }
+        }
+    });
+
+}]);

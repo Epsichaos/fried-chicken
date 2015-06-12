@@ -12,6 +12,7 @@
             
             <a class="navbar-brand" href="#/">Project</a>
         </div>
+        <div ng-controller="LogoutCtrl">
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li><a href="#/"><i class="fa fa-home"></i> Home</a></li>
@@ -32,8 +33,9 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#/contact"><i class="fa fa-envelope"></i> Contact</a></li>
-                <li><a href="#/login"><i class="fa fa-power-off"></i> Logout</a></li>
+                <li><a href="" ng-click="logout()"><i class="fa fa-power-off"></i> Logout</a></li>
             </ul>
+        </div>
         </div><!--/.nav-collapse -->
     </div>
 </nav>
