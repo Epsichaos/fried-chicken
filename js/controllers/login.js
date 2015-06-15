@@ -28,6 +28,7 @@ app.controller('LoginCtrl',
 				password: $scope.password,
 				rememberme: $scope.rememberme
 			},
+			// response of the server
 			function(res){
 				$location.path('/');
 			},
