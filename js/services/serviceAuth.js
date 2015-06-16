@@ -31,7 +31,11 @@ app.factory('Auth', function($http, $cookieStore){
             // server side authentification
             /*
             $http.post('/login', user).success(function(user){
-                changeUser(user);
+                //changeUser(user);
+                changeUser({
+                    user, 
+                    role: userRoles.user
+                });
                 success(user);
             }).error(error);
             */
