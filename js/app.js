@@ -8,7 +8,8 @@ $.ajaxSetup({ cache: false });
 // loading of modules
 angular.module('WebApp', [
     'ui.router',
-    'ngCookies'
+    'ngCookies',
+    'angular-storage'
 ])
 // menu directive
 .directive('appmenu', function(){
@@ -50,19 +51,23 @@ angular.module('WebApp', [
         })
         .state('user.home', {
             url: '/',
-            templateUrl: 'partials/home.html'
+            templateUrl: 'partials/home.html',
+            controller: 'HomeCtrl'
         })
         .state('user.historic', {
             url: '/historic',
-            templateUrl: 'partials/historic.html'
+            templateUrl: 'partials/historic.html',
+            controller: 'HistoricCtrl'
         })
         .state('user.comparisons', {
             url: '/comparisons',
-            templateUrl: 'partials/comparisons.html'
+            templateUrl: 'partials/comparisons.html',
+            controller: 'ComparisonCtrl'
         })
         .state('user.tips', {
             url: '/tips',
-            templateUrl: 'partials/tips.html'
+            templateUrl: 'partials/tips.html', 
+            controller: 'TipsCtrl'
         })
         .state('user.social', {
             url: '/social',
@@ -70,7 +75,8 @@ angular.module('WebApp', [
         })
         .state('user.contact', {
             url: '/contact',
-            templateUrl: 'partials/contact.html'
+            templateUrl: 'partials/contact.html',
+            controller: 'ContactCtrl'
         });
 
     $urlRouterProvider.otherwise('/404');

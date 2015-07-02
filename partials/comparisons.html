@@ -2,7 +2,7 @@
 <br>
 <br>
 <br>
-<div class="container">
+<div class="container" ng-controller="ComparisonCtrl" ng-init="compareAll(1,1)">
 <div class="row">
 		<div class="jumbotron">
 		<h1 class="text-center"><i class="fa fa-area-chart"></i> Comparisons</h1>
@@ -38,10 +38,10 @@
 			<span id="monthlyButton"><button class="btn btn-warning" onclick="compareAll(0,3);">Monthly</button></span>
 			<span id="yearlyButton"><button class="btn btn-warning" onclick="compareAll(0,4);">Yearly</button></span>
 			-->
-			<span id="dailyButton"></span>
-			<span id="weeklyButton"></span>
-			<span id="monthlyButton"></span>
-			<span id="yearlyButton"></span>
+			<button class="btn btn-warning" ng-click="compareAll(0,1);">Daily</button>
+			<button class="btn btn-warning" ng-click="compareAll(0,2);">Weekly</button>
+			<button class="btn btn-warning" ng-click="compareAll(0,3);">Monthly</button>
+			<button class="btn btn-warning" ng-click="compareAll(0,4);">Yearly</button>
 			<p>
 			<div id="DivComparisonBarContainer"><canvas id="barChart" width="600" height="300"></canvas></div>
 			<br>
@@ -54,11 +54,9 @@
 			<button class="btn btn-success" id="day" onclick="compareAll(1,0);">Comparison with before</button>
 			<button class="btn btn-success" id="day" onclick="compareAll(2,0);">Comparison with others</button>
 			-->
-			<span id="pastButton"></span>
-			<span id="othersButton"></span>
+			<button class="btn btn-success" id="day" ng-click="compareAll(1,0);">Comparison with before</button>
+			<button class="btn btn-success" id="day" ng-click="compareAll(2,0);">Comparison with others</button>
 			</p>
 		</div>
 	</div>
 </div>
-
-<div ng-controller="comparisonCtrl"></div>

@@ -2,7 +2,7 @@
 
 var app = angular.module('WebApp');
 
-app.factory('Auth', function($http, $cookieStore){
+app.factory('Auth', function($http, $cookieStore, $state, store){
     var accessLevels = routingConfig.accessLevels
         , userRoles = routingConfig.userRoles
         , currentUser = $cookieStore.get('user') || { username: '', role: userRoles.public };
@@ -29,33 +29,46 @@ app.factory('Auth', function($http, $cookieStore){
         },
         login: function(user, success, error) {
             // server side authentification
-            /*
-            $http.post('/login', user).success(function(user){
-                //changeUser(user);
-                changeUser({
-                    user, 
-                    role: userRoles.user
-                });
-                success(user);
-            }).error(error);
-            */
+           
+            //http request
+            $.ajax({
+                type: 'POST',
+                url: 'http://131.251.176.109:8080/consumer/login',
+                crossDomain: true,
+                data: user,
+                success: function (data) {
+                    console.log('Success in POST login request');
+                    console.log(data);
+                    if(data.jwt=='') {
+                        alert('Invalid credentials');   
+                    }
+                    if(data.jwt!='') {
+                        store.set('jwt', data.jwt);
+                        changeUser({
+                            user, 
+                            role: userRoles.user
+                        });
+                        console.log('LOGIN OK');
+                        success(user);
+                        $state.go('user.home');
+                    }
+                },
+                error: function (err) {
+                    console.log('Error in POST login request');
+                }
+            });
 
-            // dummy authentification for testing
+            // dummy authentification for testin
+            /*
             if(user.username == 'root' && user.password == 'toor') {
                 changeUser({
                     user, 
                     role: userRoles.user
                 });
-                if(user.rememberme) {
-                    /*
-                    $cookieStore.put(user);
-                    console.log($cookieStore.get(user));
-                    */
-                }
                 console.log('LOGIN OK');
                 success(user);
             }error(error);
-
+            */
         },
         logout: function(success, error) {
             /*
@@ -67,6 +80,7 @@ app.factory('Auth', function($http, $cookieStore){
                 success();
             }).error(error);
             */
+            store.remove('jwt');
             changeUser({
                 username: '',
                 role: userRoles.public

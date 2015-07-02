@@ -1,16 +1,16 @@
 'use strict';
 
 angular.module('WebApp')
-.controller('LogoutCtrl', ['$rootScope', '$scope', '$location', 'Auth', function($rootScope, $scope, $location, Auth) {
+.controller('LogoutCtrl', function($rootScope, $scope, $state, Auth) {
     $scope.user = Auth.user;
     $scope.userRoles = Auth.userRoles;
     $scope.accessLevels = Auth.accessLevels;
 
     $scope.logout = function() {
         Auth.logout(function() {
-            $location.path('/login');
+            $state.go('public.login');
         }, function() {
             $rootScope.error = "Failed to logout";
         });
     };
-}]);
+});
