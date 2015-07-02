@@ -72,31 +72,31 @@ app.controller('TipsCtrl', function($rootScope, $scope, $location, $window, stor
                     // errors
                     // wrong signature token detected
                     else if(data_json.exception=='signature') {
-                        alert('Wrong token signature !');
+                        bootbox.alert("Wrong token signature !");
                         Auth.logout(function() {
                             $state.go('public.login');
-                        })
+                        });
                     }
                     // token expired
                     else if(data_json.exception=='time') {
-                        alert('Expired token !');
+                        bootbox.alert("Expired token !");
                         Auth.logout(function() {
                             $state.go('public.login');
-                        })
+                        });
                     }
                     // unsupported token
                     else if(data_json.exception=='unsupported') {
-                        alert('Unsupported token !');
+                        bootbox.alert("Unsupported token !");
                         Auth.logout(function() {
                             $state.go('public.login');
-                        })
+                        });
                     }
                     // unknown error
                     else {
-                        alert('Unknown error !');
+                        bootbox.alert("Unknown error !");
                         Auth.logout(function() {
                             $state.go('public.login');
-                        })
+                        });
                     }
                 },
                 error: function() {

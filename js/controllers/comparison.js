@@ -170,28 +170,28 @@ app.controller('ComparisonCtrl', function($rootScope, $scope, $location, $window
 		                    // errors
 		                    // wrong signature token detected
 		                    else if(data_compare.exception=='signature') {
-		                        alert('Wrong token signature !');
+		                        bootbox.alert("Wrong token signature !");
 		                        Auth.logout(function() {
 		                            $state.go('public.login');
 		                        });
 		                    }
 		                    // token expired
 		                    else if(data_compare.exception=='time') {
-		                        alert('Expired token !');
+		                        bootbox.alert("Expired token !");
 		                        Auth.logout(function() {
 		                            $state.go('public.login');
 		                        });
 		                    }
 		                    // unsupported token
-		                    else if(data_compare=='unsupported') {
-		                        alert('Unsupported token !');
+		                    else if(data_compare.exception=='unsupported') {
+		                        bootbox.alert("Unsupported token !");
 		                        Auth.logout(function() {
 		                            $state.go('public.login');
 		                        });
 		                    }
 		                    // unknown error
 		                    else {
-		                        alert('Unknown error !');
+		                        bootbox.alert("Unknown error !");
 		                        Auth.logout(function() {
 		                            $state.go('public.login');
 		                        });
@@ -202,35 +202,35 @@ app.controller('ComparisonCtrl', function($rootScope, $scope, $location, $window
 						}
 					});
 				}
-		        // errors
-    	        // wrong signature token detected
-	            else if(data_current.exception=='signature') {
-		            alert('Wrong token signature !');
-		            Auth.logout(function() {
-		                $state.go('public.login');
-		            });
-		        }
-		        // token expired
-		        else if(data_current.exception=='time') {
-		            alert('Expired token !');
-		            Auth.logout(function() {
-		                $state.go('public.login');
-		            });
-		        }
-		        // unsupported token
-		        else if(data_current.exception=='unsupported') {
-		            alert('Unsupported token !');
-		            Auth.logout(function() {
-		                $state.go('public.login');
-		            });
-		        }
-		        // unknown error
-		        else {
-		            alert('Unknown error !');
-		            Auth.logout(function() {
-		                $state.go('public.login');
-		            });
-		        }
+                    // errors
+                    // wrong signature token detected
+                    else if(data_current.exception=='signature') {
+                        bootbox.alert("Wrong token signature !");
+                        Auth.logout(function() {
+                            $state.go('public.login');
+                        });
+                    }
+                    // token expired
+                    else if(data_current.exception=='time') {
+                        bootbox.alert("Expired token !");
+                        Auth.logout(function() {
+                            $state.go('public.login');
+                        });
+                    }
+                    // unsupported token
+                    else if(data_current.exception=='unsupported') {
+                        bootbox.alert("Unsupported token !");
+                        Auth.logout(function() {
+                            $state.go('public.login');
+                        });
+                    }
+                    // unknown error
+                    else {
+                        bootbox.alert("Unknown error !");
+                        Auth.logout(function() {
+                            $state.go('public.login');
+                        });
+                    }
 			},
 			error: function() {
 				console.error('getJSON failed in current AJAX function in comparison.js');

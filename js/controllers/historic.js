@@ -77,28 +77,28 @@ app.controller('HistoricCtrl', function($rootScope, $scope, $location, $window, 
                     // errors
                     // wrong signature token detected
                     else if(data_json.exception=='signature') {
-                        alert('Wrong token signature !');
+                        bootbox.alert("Wrong token signature !");
                         Auth.logout(function() {
                             $state.go('public.login');
                         });
                     }
                     // token expired
                     else if(data_json.exception=='time') {
-                        alert('Expired token !');
+                        bootbox.alert("Expired token !");
                         Auth.logout(function() {
                             $state.go('public.login');
                         });
                     }
                     // unsupported token
-                    else if(data_jon.exception=='unsupported') {
-                        alert('Unsupported token !');
+                    else if(data_json.exception=='unsupported') {
+                        bootbox.alert("Unsupported token !");
                         Auth.logout(function() {
                             $state.go('public.login');
                         });
                     }
                     // unknown error
                     else {
-                        alert('Unknown error !');
+                        bootbox.alert("Unknown error !");
                         Auth.logout(function() {
                             $state.go('public.login');
                         });
