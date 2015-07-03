@@ -16,11 +16,12 @@ Libraries
 - FontAwesome: Font Awesome is a nice-looking css library to use glyphicons in a website. It is also developped under the MIT license.
 - ChartJS: ChartJS is a simple and powerful javascript toolkit to render charts with canvas in webpages, developped and available under the MIT license.
 - jQuery: jQuery is a famous open source Javascript library.
+- Bootbox: Bootbox is a js library for custom alert boxes using the css framework Bootstrap 3.0
 
 Implementation
 --------------
 
-The application should be implemented using PhP script to interact with a RESTful API, used to generate the json.
+The application should be implemented using PhP script to interact with a RESTful API, used to generate the json. The authentication is based on a token system, which grant the access to the web services and the data specific for all customers.
 
 Acknowledgements
 ----------------
@@ -30,7 +31,7 @@ Many thanks to [Frederik Nakstad](https://github.com/fnakstad) and the help he p
 Warnings
 --------
 
-The login authentication is not working really well at the moment. It seems to be secure and working, but the implementation has not been achieved yet.
+This application has been developped for a precise kind of use. You will have to change the ajax function to fetch the data on the right servers. 
 
 License
 -------
