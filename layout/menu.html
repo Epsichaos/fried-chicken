@@ -1,6 +1,7 @@
 <!-- Fixed navbar -->
+
 <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
+    <div class="container" ng-controller="LogoutCtrl" ng-init="currentPage()">
         <div class="navbar-header">
         
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -10,9 +11,9 @@
                 <span class="icon-bar"></span>
             </button>
             
-            <a class="navbar-brand" href="#/">Project</a>
+            <a class="navbar-brand" href="#/" id="pageIndicator">Project</a>
         </div>
-        <div ng-controller="LogoutCtrl">
+
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="#/"><i class="fa fa-home"></i> Home</a></li>
@@ -35,7 +36,7 @@
                     <li><a href="#/contact"><i class="fa fa-envelope"></i> Contact</a></li>
                     <li><a href="" ng-click="logout()"><i class="fa fa-power-off"></i> Logout</a></li>
                 </ul>
-            </div>
+
         </div><!--/.nav-collapse -->
     </div>
 </nav>
