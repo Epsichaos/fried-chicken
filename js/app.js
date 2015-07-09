@@ -36,7 +36,7 @@ angular.module('WebApp', [
             templateUrl: 'partials/404.html'
         })
         .state('public.login', {
-            url: '/login',
+            url: '/',
             templateUrl: 'partials/login.html',
             controller: 'LoginCtrl'
         });
@@ -50,7 +50,7 @@ angular.module('WebApp', [
             }
         })
         .state('user.home', {
-            url: '/',
+            url: '/home',
             templateUrl: 'partials/home.html',
             controller: 'HomeCtrl'
         })
@@ -79,7 +79,7 @@ angular.module('WebApp', [
             controller: 'ContactCtrl'
         });
 
-    $urlRouterProvider.otherwise('/404');
+    $urlRouterProvider.otherwise('/');
 
     // just a test, I think it can be commented or remove
     $httpProvider.interceptors.push(function($q, $location) {
