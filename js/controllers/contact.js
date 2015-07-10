@@ -151,6 +151,7 @@ app.controller('ContactCtrl', function($rootScope, $scope, $location, $window, s
         // CAPTCHA CORRECT
         else {
             // MESSAGE EMPTY
+            //console.log($scope.message);
             if($scope.message == undefined) {
                 bootbox.alert("Message cannot be empty !");
             }
