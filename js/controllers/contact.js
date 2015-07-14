@@ -1,11 +1,16 @@
 
 var app = angular.module('WebApp');
+/*
+CONTROLLER CONTACT
+*/
 app.controller('ContactCtrl', function($rootScope, $scope, $location, $window, store, $state, Auth){
 	$.ajaxSetup({ cache: false });
+    // get the token
 	var token = store.get('jwt');
-
+    // When the page loads
 	$(document).ready(function() {
 		$.ajax({
+            // include the token in the URL
 			url: 'http://131.251.176.109:8080/consumer/report?type=contact&jwt=' + token,
 			dataType: 'jsonp',
 			jsonp: 'callback',
@@ -51,6 +56,7 @@ app.controller('ContactCtrl', function($rootScope, $scope, $location, $window, s
 			}
 		});
 	})
+    // Scope Function: if NoWater
     $scope.modalWarningNoWater = function() {
 
         var data_message = {"type": "nowater", "jwt": token};
@@ -97,6 +103,7 @@ app.controller('ContactCtrl', function($rootScope, $scope, $location, $window, s
             }
         });
     }
+    // Scope Function: Discolored
     $scope.modalWarningColor = function() {
         var data_message = {"type": "discolored", "jwt": token};
         $.ajax({
@@ -142,6 +149,7 @@ app.controller('ContactCtrl', function($rootScope, $scope, $location, $window, s
             }
         });
     }
+    // Scope Function: Warning Message
     $scope.modalWarningMessage = function() {
         $scope.jwt = token;
         // CAPTCHA WRONG
