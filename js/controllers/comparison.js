@@ -242,4 +242,24 @@ app.controller('ComparisonCtrl', function($rootScope, $scope, $location, $window
 			}
 	    });
     }
+    // Function to initialize the page (count request + display default chart)
+    $scope.init = function() {
+        var token = store.get('jwt');
+        var data_message = {"pageName": "comparisons", "jwt": token};
+        // COUNT REQUEST
+        $.ajax({
+            type: 'POST',
+            url: 'http://131.251.176.109:8080/consumer/count',
+            crossDomain: true,
+            data: data_message,
+            success: function (data) {
+                console.log(data);
+            },
+            error: function (err) {
+                console.log('Error in POST request');
+            }
+        });
+        // Display the default chart
+        $scope.compareAll(1,1);
+    }
 })

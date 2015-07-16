@@ -1,8 +1,7 @@
 var app = angular.module('WebApp');
 app.controller('TipsCtrl', function($rootScope, $scope, $location, $window, store, $state, Auth){
     $.ajaxSetup({ cache: false });
-    $(document).ready(function() {
-        $scope.chartTips = function(name) {
+    $scope.chartTips = function(name) {
             // TOKEN
             var token = store.get('jwt');
              // AJAX JSONP REQUEST
@@ -103,6 +102,25 @@ app.controller('TipsCtrl', function($rootScope, $scope, $location, $window, stor
                     console.error('getJSON failed in line chart generation, in tipsCtrl');
                 }
             });  
-        }
-    })
+    }
+    // Loaded function
+    $scope.init = function() {
+        var token = store.get('jwt');
+        var data_message = {"pageName": "tips", "jwt": token};
+        // COUNT REQUEST
+        $.ajax({
+            type: 'POST',
+            url: 'http://131.251.176.109:8080/consumer/count',
+            crossDomain: true,
+            data: data_message,
+            success: function (data) {
+                console.log(data);
+            },
+            error: function (err) {
+                console.log('Error in POST request');
+            }
+        });
+        // Display the default chart
+        $scope.chartTips('daily');
+    }
 })

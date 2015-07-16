@@ -99,7 +99,7 @@ app.controller('ContactCtrl', function($rootScope, $scope, $location, $window, s
                 }
             },
             error: function (err) {
-                console.log('Error in POST login request');
+                console.log('Error in POST request');
             }
         });
     }

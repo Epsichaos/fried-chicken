@@ -71,7 +71,8 @@ angular.module('WebApp', [
         })
         .state('user.social', {
             url: '/social',
-            templateUrl: 'partials/social.html'
+            templateUrl: 'partials/social.html',
+            controller: 'SocialCtrl'
         })
         .state('user.contact', {
             url: '/contact',

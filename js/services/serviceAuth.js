@@ -17,14 +17,14 @@ app.factory('Auth', function($http, $cookieStore, $state, store){
             if(role === undefined) {
                 role = currentUser.role;
             }
-            console.log(currentUser.role);
+            //console.log(currentUser.role);
             return accessLevel.bitMask & role.bitMask;
         },
         isLoggedIn: function(user) {
             if(user === undefined) {
                 user = currentUser;
             }
-            console.log(user);
+            //console.log(user);
             return user.role.title === userRoles.user.title || user.role.title === userRoles.admin.title;
         },
         login: function(user, success, error) {
@@ -37,8 +37,7 @@ app.factory('Auth', function($http, $cookieStore, $state, store){
                 crossDomain: true,
                 data: user,
                 success: function (data) {
-                    console.log('Success in POST login request');
-                    console.log(data);
+                    //console.log(data);
                     if(data.jwt=='') {
                         alert('Invalid credentials');   
                     }

@@ -1,8 +1,7 @@
 var app = angular.module('WebApp');
 app.controller('HistoricCtrl', function($rootScope, $scope, $location, $window, store, $state, Auth){
     $.ajaxSetup({ cache: false });
-    $(document).ready(function() {
-        $scope.chart = function(name) {
+    $scope.chart = function(name) {
             // TOKEN
             var token = store.get('jwt');
             // AJAX JSONP REQUEST
@@ -212,6 +211,24 @@ app.controller('HistoricCtrl', function($rootScope, $scope, $location, $window, 
                     console.error("getJSON failed in pie chart generation, in historicCtrl");
                 }
             });
-        }
-    })
+    }
+    $scope.init = function() {
+        var token = store.get('jwt');
+        var data_message = {"pageName": "historic", "jwt": token};
+        // COUNT REQUEST
+        $.ajax({
+            type: 'POST',
+            url: 'http://131.251.176.109:8080/consumer/count',
+            crossDomain: true,
+            data: data_message,
+            success: function (data) {
+                console.log(data);
+            },
+            error: function (err) {
+                console.log('Error in POST request');
+            }
+        });
+        // LOAD CHARTS
+        $scope.chart('daily');
+    }
 })
