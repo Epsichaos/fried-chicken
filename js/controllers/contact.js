@@ -7,20 +7,36 @@ app.controller('ContactCtrl', function($rootScope, $scope, $location, $window, s
 	$.ajaxSetup({ cache: false });
     // get the token
 	var token = store.get('jwt');
-    // When the page loads
-	$(document).ready(function() {
-		$.ajax({
+    // Scope Init
+    $scope.init = function() {
+        var token = store.get('jwt');
+        var data_message = {"pageName": "contact", "jwt": token};
+        // COUNT REQUEST
+        $.ajax({
+            type: 'POST',
+            url: 'http://131.251.176.109:8080/consumer/count',
+            crossDomain: true,
+            data: data_message,
+            success: function (data) {
+                console.log(data);
+            },
+            error: function (err) {
+                console.log('Error in POST request');
+            }
+        });
+        // GET the message from the company
+        $.ajax({
             // include the token in the URL
-			url: 'http://131.251.176.109:8080/consumer/report?type=contact&jwt=' + token,
-			dataType: 'jsonp',
-			jsonp: 'callback',
-			timeout: 5000,
-			success: function(data, status){
-				console.log(data);
-				if(data.access=='granted') {
-					$('#messageFromCompany').empty();
-					$('#messageFromCompany').append(data.message);
-				}
+            url: 'http://131.251.176.109:8080/consumer/report?type=contact&jwt=' + token,
+            dataType: 'jsonp',
+            jsonp: 'callback',
+            timeout: 5000,
+            success: function(data, status){
+                console.log(data);
+                if(data.access=='granted') {
+                    $('#messageFromCompany').empty();
+                    $('#messageFromCompany').append(data.message);
+                }
                     // errors
                     // wrong signature token detected
                     else if(data.exception=='signature') {
@@ -50,12 +66,12 @@ app.controller('ContactCtrl', function($rootScope, $scope, $location, $window, s
                             $state.go('public.login');
                         });
                     }
-			},
-			error: function(){
-				console.error("getJSON failed in ContactCtrl");
-			}
-		});
-	})
+            },
+            error: function(){
+                console.error("getJSON failed in ContactCtrl");
+            }
+        });
+    }
     // Scope Function: if NoWater
     $scope.modalWarningNoWater = function() {
 
