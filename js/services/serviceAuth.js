@@ -39,12 +39,12 @@ app.factory('Auth', function($http, $cookieStore, $state, store){
                 success: function (data) {
                     //console.log(data);
                     if(data.jwt=='') {
-                        alert('Invalid credentials');   
+                        bootbox.alert('Invalid credentials');
                     }
                     if(data.jwt!='') {
                         store.set('jwt', data.jwt);
                         changeUser({
-                            user, 
+                            //user, 
                             role: userRoles.user
                         });
                         console.log('LOGIN OK');

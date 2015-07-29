@@ -9,7 +9,6 @@
 			<h1 class="text-center"><i class="fa fa-users"></i> Social &#38; Watergaming</h1>
 		</div>
 	</div>
--->
 	<div class="row">
 		<div class="col-md-7">
 			<div class="row">
@@ -37,14 +36,479 @@
 			<h2 class="text-center">Social networks</h2>
 			<hr>
 			<div class="row">
-				<!--<p class="text-center"><img src="img/social/icon_facebook.png" width="150"></p>-->
 				<h1 class="text-center"><i class="fa fa-facebook-square fa-5x"></i></h1>
 			</div>
 			<br>
 			<div class="row">
-				<!--<p class="text-center"><img src="img/social/icon_twitter.png" width="150"></p>-->
 				<h1 class="text-center"><i class="fa fa-twitter fa-5x"></i></h1>
 			</div>
+		</div>
+	</div>
+-->
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<canvas id="waterGame" width="700" height="400"></canvas>
+		</div>
+	</div>
+	<br>
+	<div class="row">
+		<div class="col-md-12">
+			<ul id="myTabs" class="nav nav-tabs" role="tablist">
+		      <li role="presentation" class="active"><a href="#hometab" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">Home</a></li>
+		      <li role="presentation" class="dropdown">
+		        <a href="#" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown" aria-controls="myTabDrop1-contents">Objectives <span class="caret"></span></a>
+		        <ul class="dropdown-menu" aria-labelledby="myTabDrop1" id="myTabDrop1-contents">
+		          <li><a href="#dropdown1" role="tab" id="dropdown1-tab" data-toggle="tab" aria-controls="dropdown1">Easy</a></li>
+		          <li><a href="#dropdown2" role="tab" id="dropdown2-tab" data-toggle="tab" aria-controls="dropdown2">Medium</a></li>
+		          <li><a href="#dropdown3" role="tab" id="dropdown3-tab" data-toggle="tab" aria-controls="dropdown3">Difficult</a></li>
+		        </ul>
+		      </li>
+		      <li role="presentation"><a href="#shop" role="tab" id="shop-tab" data-toggle="tab" aria-controls="profile">Shop</a></li>
+		    </ul>
+			<div id="myTabContent" class="tab-content">
+		      <div role="tabpanel" class="tab-pane fade in active" id="hometab" aria-labelledBy="home-tab">
+		      	<div class="row">
+		      		<div class="col-md-12">
+		      			<h2 class="text-center">Watergaming</h2>
+		      			<hr>
+		      		</div>
+		      	</div>
+		      	<div class="row">
+		      		<div class="col-md-4">
+		      			<h2>Points</h2>
+		      			<hr>
+		      			<p>You have collected globally <strong>430</strong> points.</p>
+		      		</div>
+		      		<div class="col-md-4">
+		      			<h2>Rank</h2>
+		      			<hr>
+		      			<p>Your rank is <strong>4/131</strong>.</p>
+		      		</div>
+		      		<div class="col-md-4">
+		      			<h2>Shop</h2>
+		      			<hr>
+		      			<p>You can spend <strong>100</strong> points in the shop !</p>
+		      		</div>
+		      	</div>
+		      	<div class="row">
+		      		<div class="col-md-12">
+		      			<h2 class="text-center">Objectives</h2>
+		      			<hr>
+		      			<p>You can perform objectives to ear points to spend in the shop. With these points, you will be able to unlock new features for your fish tank: new fishes, decorations, ... There is 3 different kind of objectives, which grant each 5, 20 or 50 points each depending of the difficulty you have chosen.</p>
+		      		</div>
+		      	</div>
+		      </div>
+		      <div role="tabpanel" class="tab-pane fade" id="shop" aria-labelledBy="shop-tab">
+			      <div class="row">
+			      	<div class="col-md-6">
+			      		<h2 class="text-center">Fishes</h2>
+			      		<hr>
+						<table class="table table-striped">
+						        <thead>
+							        <tr>
+							          	<th>Name</th>
+							          	<th>Description</th>
+							          	<th>Price</th>
+							          	<th>Buy</th>
+							        </tr>
+							    </thead>
+								<tbody>
+									<tr>
+										<td>Fish#1</td>
+										<td>One other fish</td>
+										<td>10</td>
+										<td><button class="btn btn-sm btn-primary btn-block">Buy</button></td>
+									</tr>
+									<tr>
+										<td>Fish#2</td>
+										<td>One other fish</td>
+										<td>30</td>
+										<td><button class="btn btn-sm btn-primary btn-block">Buy</button></td>
+									</tr>
+									<tr>
+										<td>Fish#3</td>
+										<td>One other fish</td>
+										<td>50</td>
+										<td><button class="btn btn-sm btn-primary btn-block">Buy</button></td>
+									</tr>
+									<tr>
+										<td>Fish#4</td>
+										<td>One other fish</td>
+										<td>80</td>
+										<td><button class="btn btn-sm btn-primary btn-block">Buy</button></td>
+									</tr>
+									<tr>
+										<td>Fish#5</td>
+										<td>One other fish</td>
+										<td>120</td>
+										<td><button class="btn btn-sm btn-primary btn-block">Buy</button></td>
+									</tr>								
+								</tbody>
+						</table>
+			      	</div>
+			      	<div class="col-md-6">
+			      		<h2 class="text-center">Plants</h2>
+			      		<hr>
+						<table class="table table-striped">
+						        <thead>
+							        <tr>
+							          	<th>Name</th>
+							          	<th>Description</th>
+							          	<th>Price</th>
+							          	<th>Buy</th>
+							        </tr>
+							    </thead>
+								<tbody>
+									<tr>
+										<td>Plant#1</td>
+										<td>One other plant</td>
+										<td>20</td>
+										<td><button class="btn btn-sm btn-primary btn-block">Buy</button></td>
+									</tr>
+									<tr>
+										<td>Plant#2</td>
+										<td>One other plant</td>
+										<td>30</td>
+										<td><button class="btn btn-sm btn-primary btn-block">Buy</button></td>
+									</tr>
+									<tr>
+										<td>Plant#3</td>
+										<td>One other plant</td>
+										<td>50</td>
+										<td><button class="btn btn-sm btn-primary btn-block">Buy</button></td>
+									</tr>	
+									<tr>
+										<td>Plant#4</td>
+										<td>One other plant</td>
+										<td>50</td>
+										<td><button class="btn btn-sm btn-primary btn-block">Buy</button></td>
+									</tr>
+									<tr>
+										<td>Plant#5</td>
+										<td>One other plant</td>
+										<td>50</td>
+										<td><button class="btn btn-sm btn-primary btn-block">Buy</button></td>
+									</tr>							
+								</tbody>
+						</table>
+			      	</div>
+			      </div>
+			      <div class="row">
+			      	<div class="col-md-6">
+			      		<h2 class="text-center">Decoration</h2>
+			      		<hr>
+						<table class="table table-striped">
+						        <thead>
+							        <tr>
+							          	<th>Name</th>
+							          	<th>Description</th>
+							          	<th>Price</th>
+							          	<th>Buy</th>
+							        </tr>
+							    </thead>
+								<tbody>
+									<tr>
+										<td>Boat</td>
+										<td></td>
+										<td>60</td>
+										<td><button class="btn btn-sm btn-primary btn-block">Buy</button></td>
+									</tr>
+									<tr>
+										<td>Submarine</td>
+										<td></td>
+										<td>80</td>
+										<td><button class="btn btn-sm btn-primary btn-block">Buy</button></td>
+									</tr>
+									<tr>
+										<td>House</td>
+										<td></td>
+										<td>50</td>
+										<td><button class="btn btn-sm btn-primary btn-block">Buy</button></td>
+									</tr>	
+									<tr>
+										<td>Castle</td>
+										<td></td>
+										<td>70</td>
+										<td><button class="btn btn-sm btn-primary btn-block">Buy</button></td>
+									</tr>
+									<tr>
+										<td>Diver</td>
+										<td></td>
+										<td>60</td>
+										<td><button class="btn btn-sm btn-primary btn-block">Buy</button></td>
+									</tr>							
+								</tbody>
+						</table>
+			      	</div>
+			      	<div class="col-md-6">
+			      		<h2 class="text-center">Feeding</h2>
+			      		<hr>
+						<table class="table table-striped">
+						        <thead>
+							        <tr>
+							          	<th>Name</th>
+							          	<th>Description</th>
+							          	<th>Price</th>
+							          	<th>Buy</th>
+							        </tr>
+							    </thead>
+								<tbody>
+									<tr>
+										<td>Bowl/Reservoir</td>
+										<td></td>
+										<td>20</td>
+										<td><button class="btn btn-sm btn-primary btn-block">Buy</button></td>
+									</tr>
+									<tr>
+										<td>Standard Food</td>
+										<td>Need one per fish/week</td>
+										<td>15</td>
+										<td><button class="btn btn-sm btn-primary btn-block">Buy</button></td>
+									</tr>
+									<tr>
+										<td>Sophisticated Food</td>
+										<td>Optional or required for Fish #4 and #5. Need one per fish/week.</td>
+										<td>25</td>
+										<td><button class="btn btn-sm btn-primary btn-block">Buy</button></td>
+									</tr>	
+									<tr>
+										<td>Water cleaner</td>
+										<td>Make the fish healthier, happier, with more energy </td>
+										<td>150</td>
+										<td><button class="btn btn-sm btn-primary btn-block">Buy</button></td>
+									</tr>
+									<tr>
+										<td>XL Fish Tank</td>
+										<td>Can fit 7 fishes but losses 7% of water per day. Contains 150 units of water.</td>
+										<td>300</td>
+										<td><button class="btn btn-sm btn-primary btn-block">Buy</button></td>
+									</tr>							
+								</tbody>
+						</table>
+			      	</div>
+			      </div>
+		      </div>
+		      <div role="tabpanel" class="tab-pane fade" id="dropdown1" aria-labelledBy="dropdown1-tab">
+			      <div class="row">
+			      	<div class="col-md-10 col-md-offset-1">
+			      		<h2 class="text-center">Easy objectives</h2>
+			      		<hr>
+			      		<p>These objectives grant 5 points each.</p>
+						<table class="table table-striped">
+						        <thead>
+							        <tr>
+							          	<th>#</th>
+							          	<th>Description</th>
+							          	<th>Do it!</th>
+							        </tr>
+							    </thead>
+								<tbody>
+									<tr>
+										<td>#1</td>
+										<td>Avoid running taps</td>
+										<td><button class="btn btn-sm btn-primary btn-block">Do it!</button></td>
+									</tr>
+									<tr>
+										<td>#2</td>
+										<td>Reduce the time spent in the shower by 2 minutes</td>
+										<td><button class="btn btn-sm btn-primary btn-block">Do it!</button></td>
+									</tr>
+									<tr>
+										<td>#3</td>
+										<td>Turn off the tap when soaping or washing your hairs</td>
+										<td><button class="btn btn-sm btn-primary btn-block">Do it!</button></td>
+									</tr>
+									<tr>
+										<td>#4</td>
+										<td>Take a shower instead of a bath</td>
+										<td><button class="btn btn-sm btn-primary btn-block">Do it!</button></td>
+									</tr>
+									<tr>
+										<td>#5</td>
+										<td>Turn off the tap when you brush your teeth</td>
+										<td><button class="btn btn-sm btn-primary btn-block">Do it!</button></td>
+									</tr>
+									<tr>
+										<td>#6</td>
+										<td>Only start your washing machine when it is fully loaded</td>
+										<td><button class="btn btn-sm btn-primary btn-block">Do it!</button></td>
+									</tr>
+									<tr>
+										<td>#7</td>
+										<td>Only start your dishwasher when it is fully loaded</td>
+										<td><button class="btn btn-sm btn-primary btn-block">Do it!</button></td>
+									</tr>
+									<tr>
+										<td>#8</td>
+										<td>Only fill the kettle with the amount of water needed</td>
+										<td><button class="btn btn-sm btn-primary btn-block">Do it!</button></td>
+									</tr>
+									<tr>
+										<td>#9</td>
+										<td>Reuse the water that has been left in the kettle</td>
+										<td><button class="btn btn-sm btn-primary btn-block">Do it!</button></td>
+									</tr>
+									<tr>
+										<td>#10</td>
+										<td>If available, activate the Eco/Fast mode on your dishwasher</td>
+										<td><button class="btn btn-sm btn-primary btn-block">Do it!</button></td>
+									</tr>
+									<tr>
+										<td>#11</td>
+										<td>If available, activate the Eco/Fast mode on you washing machine</td>
+										<td><button class="btn btn-sm btn-primary btn-block">Do it!</button></td>
+									</tr>
+									<tr>
+										<td>#12</td>
+										<td>Use a glass of water to rinse your mouth when you clean your teeth</td>
+										<td><button class="btn btn-sm btn-primary btn-block">Do it!</button></td>
+									</tr>
+									<tr>
+										<td>#13</td>
+										<td>If you have dual-flush toilets, make sure you use the long or short flush when it is appropriated</td>
+										<td><button class="btn btn-sm btn-primary btn-block">Do it!</button></td>
+									</tr>
+									<tr>
+										<td>#14</td>
+										<td>When dishwashing per hand, try not to use too much soap or washing liquid</td>
+										<td><button class="btn btn-sm btn-primary btn-block">Do it!</button></td>
+									</tr>
+								</tbody>
+						</table>
+			      	</div>
+			      </div>
+		      </div>
+		      <div role="tabpanel" class="tab-pane fade" id="dropdown2" aria-labelledBy="dropdown2-tab">
+		      	<div class="row">
+			      	<div class="col-md-10 col-md-offset-1">
+			      		<h2 class="text-center">Medium objectives</h2>
+			      		<hr>
+			      		<p>These objectives grant 20 points each.</p>
+						<table class="table table-striped">
+						        <thead>
+							        <tr>
+							          	<th>#</th>
+							          	<th>Description</th>
+							          	<th>Do it!</th>
+							        </tr>
+							    </thead>
+								<tbody>
+									<tr>
+										<td>#1</td>
+										<td>Try not to take a bath this week</td>
+										<td><button class="btn btn-sm btn-primary btn-block">Do it!</button></td>
+									</tr>
+									<tr>
+										<td>#2</td>
+										<td>Reduce the time spent in the shower by 3 minutes</td>
+										<td><button class="btn btn-sm btn-primary btn-block">Do it!</button></td>
+									</tr>
+									<tr>
+										<td>#3</td>
+										<td>Try to do one less washing machine load this week</td>
+										<td><button class="btn btn-sm btn-primary btn-block">Do it!</button></td>
+									</tr>
+									<tr>
+										<td>#4</td>
+										<td>Try to do one less dishwasher load this week</td>
+										<td><button class="btn btn-sm btn-primary btn-block">Do it!</button></td>
+									</tr>
+									<tr>
+										<td>#5</td>
+										<td>Do not flush the toilet all the time</td>
+										<td><button class="btn btn-sm btn-primary btn-block">Do it!</button></td>
+									</tr>
+									<tr>
+										<td>#6</td>
+										<td>Reuse the water used for boiling some food to water plant. Ex: eggs, pasta</td>
+										<td><button class="btn btn-sm btn-primary btn-block">Do it!</button></td>
+									</tr>
+									<tr>
+										<td>#7</td>
+										<td>If dishwashing per hand, try to use a basin/bowl</td>
+										<td><button class="btn btn-sm btn-primary btn-block">Do it!</button></td>
+									</tr>
+									<tr>
+										<td>#8</td>
+										<td>If dishwashing per hand, try to rinse the dishes in a bowl as well after washing them</td>
+										<td><button class="btn btn-sm btn-primary btn-block">Do it!</button></td>
+									</tr>
+									<tr>
+										<td>#9</td>
+										<td>Try to reuse the water used for dishwashing per hand for garden purposes. A low amount of washing liquid won’t affect the plant</td>
+										<td><button class="btn btn-sm btn-primary btn-block">Do it!</button></td>
+									</tr>
+									<tr>
+										<td>#10</td>
+										<td>Try to wash your clothes by hand in a basin when you don’t have a lot to clean</td>
+										<td><button class="btn btn-sm btn-primary btn-block">Do it!</button></td>
+									</tr>
+									<tr>
+										<td>#11</td>
+										<td>Try to turn on the dishwasher or washing machine between hour#1 and hour#2</td>
+										<td><button class="btn btn-sm btn-primary btn-block">Do it!</button></td>
+									</tr>
+								</tbody>
+						</table>
+			      	</div>
+			      </div>
+		      </div>
+		      <div role="tabpanel" class="tab-pane fade" id="dropdown3" aria-labelledBy="dropdown3-tab">
+			      <div class="row">
+			      	<div class="col-md-10 col-md-offset-1">
+			      		<h2 class="text-center">Difficult objectives</h2>
+			      		<hr>
+			      		<p>These objectives grant 50 points each.</p>
+						<table class="table table-striped">
+						        <thead>
+							        <tr>
+							          	<th>#</th>
+							          	<th>Description</th>
+							          	<th>Do it!</th>
+							        </tr>
+							    </thead>
+								<tbody>
+									<tr>
+										<td>#1</td>
+										<td>Collect rainwater to water your plants</td>
+										<td><button class="btn btn-sm btn-primary btn-block">Do it!</button></td>
+									</tr>
+									<tr>
+										<td>#2</td>
+										<td>Try to do one less washing machine load per week over two weeks</td>
+										<td><button class="btn btn-sm btn-primary btn-block">Do it!</button></td>
+									</tr>
+									<tr>
+										<td>#3</td>
+										<td>Try to do one less dishwasher load per week over two weeks</td>
+										<td><button class="btn btn-sm btn-primary btn-block">Do it!</button></td>
+									</tr>
+									<tr>
+										<td>#4</td>
+										<td>Try only to take two baths maximum per month</td>
+										<td><button class="btn btn-sm btn-primary btn-block">Do it!</button></td>
+									</tr>
+									<tr>
+										<td>#5</td>
+										<td>When taking the bath, try to reuse some of the “grey” water for garden purposes</td>
+										<td><button class="btn btn-sm btn-primary btn-block">Do it!</button></td>
+									</tr>
+									<tr>
+										<td>#6</td>
+										<td>If you can, reduce the intensity of the flow coming out of the shower</td>
+										<td><button class="btn btn-sm btn-primary btn-block">Do it!</button></td>
+									</tr>
+									<tr>
+										<td>#7</td>
+										<td>If washing your car, try to use a basin and not a pressure washer</td>
+										<td><button class="btn btn-sm btn-primary btn-block">Do it!</button></td>
+									</tr>
+								</tbody>
+						</table>
+			      	</div>
+			      </div>
+		      </div>
+		    </div>
 		</div>
 	</div>
 </div>
